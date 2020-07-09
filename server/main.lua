@@ -78,28 +78,28 @@ end, false)
 
 -- Version Checking - DON'T TOUCH THIS
 
-local CurrentVersion = '1.0.0'
+local CurrentVersion = '1.0.1'
 local GithubResourceName = 'Factions-Chat'
 
 PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/master/' .. GithubResourceName .. '/VERSION', function(Error, NewestVersion, Header)
     PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/master/' .. GithubResourceName .. '/CHANGELOG', function(Error, Changes, Header)
-        print('\n')
-        print('[Factions Chat] Checking for updates...')
-        print('')
-        print('[Factions Chat] Current version: ' .. CurrentVersion)
-        print('[Factions Chat] Updater version: ' .. NewestVersion)
-        print('')
+        print('^0')
+        print('^6[Factions Chat]^0 Checking for updates...')
+        print('^0')
+        print('^6[Factions Chat]^0 Current version: ^5' .. CurrentVersion .. '^0')
+        print('^6[Factions Chat]^0 Updater version: ^5' .. NewestVersion .. '^0')
+        print('^0')
         if CurrentVersion ~= NewestVersion then
-            print('[Factions Chat] Your script is outdated!')
-            print('')
-            print('[Factions Chat] CHANGELOG ' .. NewestVersion .. ':')
-            print('')
+            print('^6[Factions Chat]^0 Your script is ^8outdated^0!')
+            print('^0')
+            print('^6[Factions Chat] ^3CHANGELOG ^5' .. NewestVersion .. ':^0')
+            print('^3')
             print(Changes)
-            print('')
-            print('[Factions Chat] You are not running the newest stable version of Factions Chat. Please update: https://github.com/Jougito/Factions-Chat')
+            print('^0')
+            print('^6[Factions Chat]^0 You ^8are not^0 running the newest stable version of ^5Factions Chat^0. Please update: https://github.com/Jougito/Factions-Chat')
         else
-            print('[Factions Chat] Your script is up-to-update')
+            print('^6[Factions Chat]^0 Your script is ^2up-to-update^0')
         end
-        print('\n')
+        print('^0')
     end)
 end)
