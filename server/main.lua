@@ -98,7 +98,7 @@ PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/ma
             print('^0')
             print('^6[Factions Chat]^0 You ^8are not^0 running the newest stable version of ^5Factions Chat^0. Please update: https://github.com/Jougito/Factions-Chat')
         else
-            print('^6[Factions Chat]^0 Your script is ^2up-to-update^0')
+            print('^6[Factions Chat]^0 Your script is ^2up to update^0')
         end
         print('^0')
     end)
