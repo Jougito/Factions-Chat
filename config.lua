@@ -10,6 +10,8 @@ Config.rCommand     = "rr" -- Comando para la radio conjunta Policía - EMS
 
 Config.JouBot       = false -- Habilita si el comando es registrado por el script JouBot
 
+Config.ESXIdentity  = false -- Habilita el uso del nombre del personaje
+
 Label               = {}
 
 Label.Police        = "Radio LSPD" -- Título Policía

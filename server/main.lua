@@ -13,10 +13,14 @@ RegisterCommand(Config.Command, function(source, args, rawCommand)
     local uName = GetPlayerName(uID)
     local xPlayer = ESX.GetPlayerFromId(uID)
     local pJob = xPlayer.job.name
-    
+
+    if Config.ESXIdentity then
+        uName = xPlayer.getName()
+    end
+
     if args ~= "" then
 
-        if Config.JouBot then   
+        if Config.JouBot then
             TriggerEvent('JouBot:ToDiscord', 'chat', uName .. ' (ID: ' .. uID .. ')', '/' .. Config.Command .. ' ' .. args, 'steam', true, uID, TTS)
         end
 
@@ -48,7 +52,7 @@ RegisterCommand(Config.Command, function(source, args, rawCommand)
             TriggerClientEvent('chat:addMessage', uID, { args = { "[Radio]: ", "^7No tienes permisos para hablar por este chat" }, color = Color.WeazelNews })
         end
     end
-    
+
 end, false)
 
 RegisterCommand(Config.rCommand, function(source, args, rawCommand)
@@ -59,10 +63,14 @@ RegisterCommand(Config.rCommand, function(source, args, rawCommand)
     local uName = GetPlayerName(uID)
     local xPlayer = ESX.GetPlayerFromId(uID)
     local pJob = xPlayer.job.name
-    
-    if args ~= "" then              
 
-        if Config.JouBot then   
+    if Config.ESXIdentity then
+        uName = xPlayer.getName()
+    end
+
+    if args ~= "" then
+
+        if Config.JouBot then
             TriggerEvent('JouBot:ToDiscord', 'chat', uName .. ' (ID: ' .. uID .. ')', '/' .. Config.rCommand .. ' ' .. args, 'steam', true, uID, TTS)
         end
 
@@ -73,12 +81,12 @@ RegisterCommand(Config.rCommand, function(source, args, rawCommand)
             TriggerClientEvent('chat:addMessage', uID, { args = { "[Radio]: ", "^7No tienes permisos para hablar por este chat" }, color = Color.WeazelNews })
         end
     end
-    
+
 end, false)
 
 -- Version Checking - DON'T TOUCH THIS
 
-local CurrentVersion = '1.0.1'
+local CurrentVersion = '1.0.2'
 local GithubResourceName = 'Factions-Chat'
 
 PerformHttpRequest('https://raw.githubusercontent.com/Jougito/FiveM_Resources/master/' .. GithubResourceName .. '/VERSION', function(Error, NewestVersion, Header)
